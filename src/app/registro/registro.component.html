@@ -1,0 +1,44 @@
+<div class="row">
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+<div class="row">
+  <div class="col-md-4">
+
+  </div>
+  <div class="col-md-4">
+      <form [formGroup]="signupForm">
+          <div class="form-group">
+            <label for="exampleInputName1">Nombre:</label>
+            <input type="text" formControlName = "nombre" name="Nombre" class="form-control" id="nombre" aria-describedby="nameHelp" placeholder="Ingrese su nombre" required>            
+          </div>
+          <div class="form-group">
+              <label for="exampleInpuLastName1">Apellido:</label>
+              <input type="text" formControlName = "apellido" name="Apellido" class="form-control" id="apellido" aria-describedby="lastnameHelp" placeholder="Ingrese su apellido" required>            
+            </div>
+          <div class="form-group">
+                <label for="exampleInpuLastName1">Fecha de nacimiento:</label>
+                <input type="date" formControlName = "nacimiento" name="Nacimiento" class="form-control" id="nacimiento" aria-describedby="dateHelp" placeholder="Ingrese su fecha de nacimiento" required>            
+          </div>
+          <div class="form-group">
+            <label for="exampleInpuLastName1">Teléfono:</label>
+            <input type="number" formControlName = "telefono" name="Telefono" class="form-control" id="telefono" aria-describedby="phoneHelp" placeholder="Ingrese su numero de telefono" required>            
+          </div>
+          <div class="form-group">
+            <label for="exampleInpuUser1">Usuario:</label>
+            <input type="text" formControlName = "usuario" name="Usuario" class="form-control" id="usuario" aria-describedby="userHelp" placeholder="Ingrese su nombre de usuario" required>            
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password:</label>
+            <input type="password" formControlName = "password" class="form-control" id="password" name="Password" placeholder="Password" requiired>
+          </div>
+          <button class="btn btn-primary" (click)="registrarUsuario()" >Listo</button>
+        </form>
+  </div>
+  <div class="col-md-4">
+
+  </div>
+
+</div>
