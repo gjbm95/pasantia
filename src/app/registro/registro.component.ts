@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Gestion } from '../../services/Gestion';
+import { CognitoService } from '../../services/CognitoService';
 import { ContactModel } from '../../models/ContactModel';
+
 //componentes de form
 import {FormGroup,FormControl, Validators} from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { ApipruebaService } from '../apiprueba.service';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -14,7 +16,7 @@ export class RegistroComponent implements OnInit {
   signupForm:FormGroup;
   
   
-  constructor(public router:Router) { 
+  constructor(public router:Router, public api:ApipruebaService) { 
      
   }
 
@@ -30,9 +32,7 @@ export class RegistroComponent implements OnInit {
   }
 
   public registrarUsuario(){
-    var gestion:Gestion = new Gestion();
-    gestion.registrarUsuario(this.signupForm)
-
+    this.api.Cognito_registrarUsuario(this.signupForm); 
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //componentes de form
 import {FormGroup,FormControl, Validators} from '@angular/forms';
-import { Gestion } from '../../services/Gestion';
+import { ApipruebaService } from '../apiprueba.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class IniciarSesionComponent implements OnInit {
   signinForm:FormGroup;
 
-  constructor(public router:Router) { }
+  constructor(public router:Router,public api:ApipruebaService) { }
 
   ngOnInit() {
     this.signinForm = new FormGroup ({
@@ -21,9 +21,8 @@ export class IniciarSesionComponent implements OnInit {
     });
   }
 
-  public iniciarSesion(){
-    var gestion:Gestion = new Gestion();
-    gestion.iniciarSesion(this.signinForm);
+  public iniciarSesion(){  
+    this.api.Cognito_iniciarSesion(this.signinForm);
        
   }
 

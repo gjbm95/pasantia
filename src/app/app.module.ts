@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
 
 import { ContactModel } from '././../models/ContactModel';
+import { ApipruebaService } from './apiprueba.service';
 
 const appRoutes: Routes = [
   { path: 'index', component: HomeComponent },
@@ -38,7 +39,7 @@ const appRoutes: Routes = [
       {enableTracing:true}
     )
   ],
-  providers: [ ContactModel ],
+  providers: [ ApipruebaService ],
   bootstrap: [AppComponent]
 })
 

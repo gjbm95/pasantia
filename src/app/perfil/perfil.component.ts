@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApipruebaService } from '../apiprueba.service';
 
 @Component({
   selector: 'app-perfil',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
+  
+  constructor(public api:ApipruebaService) { 
 
-  constructor() { }
+  }
 
   ngOnInit() {
+    this.api.Api_pruebaInicial();
+    
   }
 
 }
