@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApipruebaService } from '../apiprueba.service';
+import { ApipruebaService } from '../../services/apiprueba.service';
 
 @Component({
   selector: 'app-perfil',
@@ -8,12 +8,20 @@ import { ApipruebaService } from '../apiprueba.service';
 })
 export class PerfilComponent implements OnInit {
   
-  constructor(public api:ApipruebaService) { 
 
+  public usuario = {
+      nombre:"",
+      apellido:"",
+      telefono:"",
+      fecha:""
+  };
+
+  constructor(public api:ApipruebaService) { 
+   
   }
 
   ngOnInit() {
-    this.api.Api_pruebaInicial();
+    this.usuario = this.api.Api_obtenerDatos(this.usuario);
     
   }
 
