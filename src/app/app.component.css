@@ -2,3 +2,11 @@ div{
   font-family: Arial, Helvetica, sans-serif;
   color: black;
 }
+#header{
+  background-image: url("../assets/images/fondo.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+

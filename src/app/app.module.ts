@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 
 import { ApipruebaService } from './../services/apiprueba.service';
 import { CognitoService } from './../services/cognito.service';
+import { MenuComponent } from './menu/menu.component';
 
 
 const appRoutes: Routes = [
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     IniciarSesionComponent,
     RegistroComponent,
     PerfilComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

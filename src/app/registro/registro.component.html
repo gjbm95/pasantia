@@ -1,9 +1,4 @@
-<div class="row">
-  <br>
-  <br>
-  <br>
-  <br>
-</div>
+
 <div class="row">
   <div class="col-md-4">
 
@@ -12,27 +7,40 @@
       <form [formGroup]="signupForm">
           <div class="form-group">
             <label for="exampleInputName1">Nombre:</label>
-            <input type="text" formControlName = "nombre" name="Nombre" class="form-control" id="nombre" aria-describedby="nameHelp" placeholder="Ingrese su nombre" required>            
+            <input type="text" formControlName = "nombre" name="Nombre" class="form-control" id="nombre" aria-describedby="nameHelp" placeholder="Ingrese su nombre">            
+            <small *ngIf="nombre.errors?.required">Este campo es obligatorio</small>
+            <small *ngIf="nombre.errors?.pattern">Solo esta permitido el uso de letras en este campo</small>
+            <small *ngIf="nombre.errors?.minlength">El usuario debe tener como mínimo 1 caracter</small>
           </div>
           <div class="form-group">
               <label for="exampleInpuLastName1">Apellido:</label>
               <input type="text" formControlName = "apellido" name="Apellido" class="form-control" id="apellido" aria-describedby="lastnameHelp" placeholder="Ingrese su apellido" required>            
+              <small *ngIf="apellido.errors?.required">Este campo es obligatorio</small>
+              <small *ngIf="apellido.errors?.pattern">Solo esta permitido el uso de letras en este campo</small>
+              <small *ngIf="apellido.errors?.minlength">El usuario debe tener como mínimo 1 caracter</small>
             </div>
           <div class="form-group">
                 <label for="exampleInpuLastName1">Fecha de nacimiento:</label>
                 <input type="date" formControlName = "nacimiento" name="Nacimiento" class="form-control" id="nacimiento" aria-describedby="dateHelp" placeholder="Ingrese su fecha de nacimiento" required>            
+                <small *ngIf="nacimiento.errors?.required">Este campo es obligatorio</small>
           </div>
           <div class="form-group">
             <label for="exampleInpuLastName1">Teléfono:</label>
             <input type="number" formControlName = "telefono" name="Telefono" class="form-control" id="telefono" aria-describedby="phoneHelp" placeholder="Ingrese su numero de telefono" required>            
+            <small *ngIf="telefono.errors?.required">Este campo es obligatorio</small>
           </div>
           <div class="form-group">
             <label for="exampleInpuUser1">Usuario:</label>
             <input type="text" formControlName = "usuario" name="Usuario" class="form-control" id="usuario" aria-describedby="userHelp" placeholder="Ingrese su nombre de usuario" required>            
+            <small *ngIf="usuario.errors?.required">Este campo es obligatorio</small>
+            <small *ngIf="usuario.errors?.minlength">El nombre de usuario debe tener como mínimo 3 caracteres</small>
+            <small *ngIf="usuario.errors?.maxlength">El nombre de usuario debe tener como máximo 40 caracteres</small>
+            <small *ngIf="apellido.errors?.pattern">El nombre de usuario no de presentar espacios</small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password:</label>
             <input type="password" formControlName = "password" class="form-control" id="password" name="Password" placeholder="Password" requiired>
+            <small *ngIf="password.errors?.required">Este campo es obligatorio</small>
           </div>
           <button class="btn btn-primary" (click)="registrarUsuario()" >Listo</button>
         </form>

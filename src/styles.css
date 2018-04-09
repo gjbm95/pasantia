@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+.header{
+   background-image: url("assets/images/fondo.png");
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   
+}
+
+
+
+/* unvisited link */
+body:input{
+    font-size: 16px;
+    
+}
+
+body:link {
+    color: #488aff;
+    
+
+}
+
+body:input{
+    
+}
+
+/* visited link */
+/*
+body:visited {
+    color: white;
+}
+*/
+

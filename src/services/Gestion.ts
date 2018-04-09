@@ -1,5 +1,3 @@
-import { ContactModel } from '../models/ContactModel';
-import { LoginModel } from '../models/LoginModel';
 import { Router } from '@angular/router';
 
 declare let AWSCognito:any;
