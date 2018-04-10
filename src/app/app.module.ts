@@ -19,7 +19,7 @@ const appRoutes: Routes = [
   { path: 'login', component: IniciarSesionComponent },
   { path: 'signup',component: RegistroComponent },
   { path: 'profile', component: PerfilComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({

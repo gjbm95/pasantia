@@ -23,3 +23,10 @@ button{
     color:#999;
     opacity: 1; /* Firefox */
   }
+
+  .red{
+    border: 1px solid red;
+}
+.green{
+    border: 1px solid #32db64;
+}

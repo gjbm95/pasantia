@@ -89,7 +89,7 @@ export class CognitoService {
         cognitoUser = result.user;
         console.log('user name is ' + cognitoUser.getUsername());    
         
-        window.location.href = "index"; 
+        window.location.href = "login"; 
     });
     
     }

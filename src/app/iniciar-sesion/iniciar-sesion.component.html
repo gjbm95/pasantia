@@ -1,22 +1,45 @@
 
 <div class="row">
+        <div id="header" class="col-md-12">
+            <div class="row">
+              <div class="col-md-4">
+    
+              </div>  
+              <div class="col-md-4">
+                <br>
+                <br> 
+                <img src="../assets/images/citywallet-logo.png" width="100" height="94" >
+                 <br>
+                 <br> 
+                 <br>
+              </div>
+              <div class="col-md-4">             
+              </div>
+            </div>
+        </div>
+</div>
+<div class="row">
   <div class="col-md-12">
     <div class="container">
       <form [formGroup]="signinForm">
-          <br>
           <div class="form-group">
-            <input formControlName = "usuario" name="Nombre" type="email" class="form-control uneditable-input" id="usuario" aria-describedby="emailHelp" placeholder="Usuario o Correo Electronico">
-          </div>
-          <br>
-          <div class="form-group">
-            <input formControlName = "password"  name="password" type="password" class="form-control uneditable-input" id="exampleInputPassword1" placeholder="Contraseña">
-          </div>
+              <label for="exampleInpuUser1">Usuario:</label>
+              <input type="text" [ngClass]="{red: (usuario.invalid && usuario.touched && hayespacio), green: usuario.valid}" formControlName = "usuario" name="Usuario" class="form-control" id="usuario" aria-describedby="userHelp" placeholder="Ingrese su nombre de usuario">            
+              <small  class="validacion" *ngIf="usuario.errors?.required && (usuario.touched)">El campo es requerido</small>
+              <small  class="validacion" *ngIf="usuario.errors?.minlength && (usuario.touched)">El nombre de usuario debe tener como mínimo 3 caracteres</small>
+              <small  class="validacion" *ngIf="usuario.errors?.maxlength && (usuario.touched)">El nombre de usuario debe tener como máximo 40 caracteres</small>
+              <small  class="validacion" *ngIf="hayespacio && (usuario.touched)">El nombre de usuario no de presentar espacios</small>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password:</label>
+              <input type="password" [ngClass]="{red: (password.invalid && password.touched), green: password.valid}" formControlName = "password" class="form-control" id="password" name="Password" placeholder="Password" requiired>
+              <small  class="validacion" *ngIf="password.errors?.required && (password.touched)">El campo es requerido</small>
+              <small  class="validacion" *ngIf="password.errors?.minlength && (password.touched)">El password debe tener como mínimo 8 caracteres</small>
+            </div>
           <div id="emailHelp" class="form-text text-muted">¿Olvidaste tu contraseña?</div>
           <br>
-          <br>
-          <br>
-          <br>
-          <button style="width: 100%" type="submit" class="btn btn-primary" (click)="iniciarSesion()">Iniciar Sesion</button>
+          <button [disabled]="esinvalido" style="width: 100%" type="submit" class="btn btn-primary" (click)="iniciarSesion()">Iniciar Sesion</button>
           <div id="emailHelp" class="form-text text-muted">¿Aun no tienes cuenta? <a routerLink="/signup">Regístrate Aquí</a></div>
         </form>
     </div>

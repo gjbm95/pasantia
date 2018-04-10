@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-.header{
+#header{
    background-image: url("assets/images/fondo.png");
    -webkit-background-size: cover;
    -moz-background-size: cover;
@@ -9,7 +9,9 @@
    
 }
 
-
+.validacion{
+    color:red;
+}
 
 /* unvisited link */
 body:input{
@@ -23,9 +25,7 @@ body:link {
 
 }
 
-body:input{
-    
-}
+
 
 /* visited link */
 /*

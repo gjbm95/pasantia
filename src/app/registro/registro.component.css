@@ -2,3 +2,12 @@ div{
     color: black; 
     
 }
+
+
+
+.red{
+    border: 1px solid red;
+}
+.green{
+    border: 1px solid #32db64;
+}

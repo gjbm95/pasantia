@@ -17,8 +17,8 @@ export class IniciarSesionComponent implements OnInit {
 
   ngOnInit() {
     this.signinForm = new FormGroup ({
-      usuario: new FormControl('',Validators.required),
-      password: new FormControl('',Validators.required)
+      usuario: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(40),Validators.pattern(/^\S*$/)]),
+      password: new FormControl('',[Validators.required,Validators.minLength(8)])
     });
   }
 
@@ -26,5 +26,23 @@ export class IniciarSesionComponent implements OnInit {
     this.cognito.Cognito_iniciarSesion(this.signinForm);
        
   }
+
+  get usuario() {
+    return this.signinForm.get('usuario');
+  }
+  get password() {
+    return this.signinForm.get('password');
+  }
+
+  get esinvalido(){
+    var respuesta = false;   
+    if (this.usuario.invalid)
+       respuesta =true;
+    if (this.password.invalid)
+       respuesta =true;
+       
+    return respuesta; 
+  }
+
 
 }
